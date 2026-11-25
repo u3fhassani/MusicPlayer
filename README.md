@@ -1,32 +1,77 @@
-# React + TypeScript + Vite
+# 🎵 LyricFlow | موزیک پلیر هوشمند دو زبانه (فارسی و زبان اصلی)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**LyricFlow** یک موزیک پلیر مدرن، سریع و تمام‌عیار تحت وب است که با تمرکز بر **نمایش همزمان لیریکس دو زبانه (متن اصلی + ترجمه فارسی)**، **پردازش ۱۰۰٪ محلی روی سیستم کاربر** و **پخش حرفه‌ای صدا** ساخته شده است.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ امکانات و قابلیت‌ها
 
-## React Compiler
+### 🎧 پخش محلی و آرشیو دائمی (بدون نیاز به سرور)
+- **پخش مستقیم از کامپیوتر و موبایل:** پشتیبانی از انتخاب تکی، چندتایی، کشیدن و رها کردن (Drag & Drop) و حتی **انتخاب یک پوشه کامل** از فایل‌های صوتی (`MP3`, `WAV`, `OGG`, `M4A`, `FLAC`).
+- **ذخیره دائمی در مرورگر (`IndexedDB`):** تمام آهنگ‌ها، کاورها، لیریکس‌ها و ترجمه‌های فارسی در حافظه مرورگر ذخیره می‌شوند و با بستن یا رفرش صفحه از بین نمی‌روند (بدون آپلود به هیچ سروری).
+- **پوشه مجزای علاقه‌مندی‌ها (Favorites ❤️):** امکان نشانه‌گذاری آهنگ‌های محبوب و دسترسی سریع به آن‌ها در تب جداگانه علاقه‌مندی‌ها.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📝 لیریکس هوشمند و ترجمه خودکار
+- **دریافت خودکار لیریکس زمان‌بندی‌شده:** جستجو و دریافت متن هماهنگ آهنگ‌ها با دقت صدم ثانیه.
+- **ترجمه خودکار و رایگان به فارسی:** ترجمه آنی با **Google Translate** همراه با تشخیص خودکار زبان مبدا (انگلیسی، ترکی، فرانسوی، اسپانیایی، کره‌ای و...) بدون نیاز به هیچ کلید API یا ثبت‌نام.
+- **حالت‌های مختلف نمایش:** نمایش همزمان دو زبانه، فقط زبان اصلی، یا فقط ترجمه فارسی همراه با اسکرول نرم و وسط‌چین.
+- **تنظیم دستی سینک (`Sync Offset`):** جلو و عقب بردن زمان‌بندی متن با گام نیم‌ثانیه‌ای.
+- **استودیو ویرایش متن و ترجمه:**
+  - ویرایش خط‌به‌خط متن اصلی و ترجمه فارسی
+  - پیست یکجای ترجمه فارسی یا متن استاندارد `LRC`
+  - **دانلود فایل `.lrc`** برای ذخیره متن روی کامپیوتر یا گوشی
+  - **حذف کامل لیریکس** یک آهنگ با تایید ایمن
+- **دیکشنری کلمات:** با کلیک روی هر کلمه انگلیسی داخل متن ترانه، تلفظ، تعریف و معنی فارسی آن نمایش داده می‌شود.
 
-## Expanding the Oxlint configuration
+### 🎛️ اکولایزر و تنظیمات حرفه‌ای صدا (`Web Audio API`)
+- **اکولایزر ۵ بانده زنده:** کنترل دقیق فرکانس‌های `60Hz` (بیس عمیق)، `230Hz` (بیس گرم)، `910Hz` (صدای خواننده)، `3.6kHz` (شفافیت) و `14kHz` (زیر و تیزی صدا) از `-12dB` تا `+12dB`.
+- **۶ حالت آماده صدا (Presets):** نرمال، بیس سنگین، پاپ، راک، صدای خواننده و کلاب/مهمانی.
+- **تقویت بیس (`Bass Boost`)** و **محافظ صدا (`Compressor`)** برای جلوگیری از خش‌خش صدا.
+- **تعادل اسپیکر چپ و راست (`Stereo Balance`)**.
+- **تایمر خواب (`Sleep Timer`):** توقف خودکار پخش پس از ۱۵، ۳۰، ۴۵ یا ۶۰ دقیقه همراه با شمارش معکوس زنده.
+- **کنترل سرعت پخش:** تغییر سرعت از **`0.25x`** تا **`3x`** (هم با دکمه‌های آماده و هم با اسلایدر دقیق).
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### 🎨 طراحی مدرن، ریسپانسیو و انیمیشن‌های صوتی
+- **۵ انیمیشن تعاملی رقص‌نور صوتی:** با کلیک روی ناحیه انیمیشن، به ترتیب بین حالت‌های *میله‌های نئونی*، *اکولایزر آینه‌ای*، *موج زنده*، *ذرات کهکشانی* و *پالس دایره‌ای* جابجا شوید (به همراه ۳ تم رنگی).
+- **ریسپانسیو اختصاصی موبایل:** در نمایشگرهای موبایل، به جای لوگوی بزرگ، متن ترانه به صورت تمام‌صفحه نمایش داده می‌شود تا خواندن و همراهی با آهنگ راحت باشد و در صورت نیاز با یک لمس به نمای کاور دیسک جابجا شوید.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+---
+
+## 🛠️ تکنولوژی‌ها و سرویس‌های استفاده‌شده
+
+| بخش | ابزار / سرویس |
+| :--- | :--- |
+| **رابط کاربری (Frontend)** | React 19, TypeScript, Tailwind CSS v4 |
+| **ابزار ساخت (Build Tool)** | Vite 8 |
+| **آیکون‌ها** | Lucide React |
+| **خواندن متادیتای فایل صوتی (ID3)** | `music-metadata-browser` |
+| **پردازش صدا، اکولایزر و ویژوالایزر** | Web Audio API (`BiquadFilterNode`, `DynamicsCompressorNode`, `StereoPannerNode`, `AnalyserNode`, HTML5 Canvas) |
+| **ذخیره‌سازی محلی** | IndexedDB (`LyricFlowDB`) & `localStorage` |
+| **پایگاه‌داده لیریکس** | [LRCLIB API](https://lrclib.net/) |
+| **موتور ترجمه** | Google Translate (`translate.googleapis.com` با `sl=auto`) |
+| **دیکشنری انگلیسی** | [Free Dictionary API](https://dictionaryapi.dev/) |
+| **انتشار خودکار (CI/CD)** | GitHub Actions & GitHub Pages |
+
+---
+
+## 🚀 اجرای پروژه روی سیستم شخصی
+
+```bash
+# نصب پکیج‌ها
+npm install
+
+# اجرای محیط توسعه
+npm run dev
+
+# ساخت نسخه نهایی (خروجی در پوشه dist)
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 🌐 انتشار رایگان روی GitHub Pages
+
+این پروژه از قبل با تنظیم `base: './'` در `vite.config.ts` و ورک‌فلو `.github/workflows/deploy.yml` آماده انتشار است:
+1. کد را روی ریپازیتوری گیت‌هاب خودتان `push` کنید.
+2. در گیت‌هاب به مسیر **`Settings` → `Pages`** بروید و **Source** را روی **`GitHub Actions`** قرار دهید.
+3. سایت شما پس از چند ثانیه به صورت خودکار ساخته و منتشر می‌شود.
